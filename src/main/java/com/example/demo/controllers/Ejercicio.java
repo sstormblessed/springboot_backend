@@ -85,7 +85,7 @@ public class Ejercicio {
     @GetMapping("/rickandmorty/random")
     public String getRickAndMortyRandomCharacter(){
         Person c = rickAndMortyService.getCharacterFromAPI();
-        // return "<img src='"+c.image+"'/>";
-        return MessageFormat.format("<img src = '(0)'/>", c.image);
+        return "<img src='" + c.image + "'/>";
+        // return MessageFormat.format("<img src = '(0)'/>", c.image);
     }
 }
