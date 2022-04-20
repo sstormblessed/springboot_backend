@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Map;
 
 import com.example.demo.models.Person;
@@ -88,4 +89,22 @@ public class Ejercicio {
         return "<img src='" + c.image + "'/>";
         // return MessageFormat.format("<img src = '(0)'/>", c.image);
     }
+
+    @GetMapping("/rickandmorty/list")
+    public String getRickAndMortyRandomList(){
+        String web = "<h1>Lista de personas</h1>";
+        ArrayList<Person> persons = rickAndMortyService.getCharactersFromAPI();
+        for(Person person : persons){
+            web+="<img src='"+person.image+"'/>";
+        }
+        return web;
+    }
+
+    //http://localhost:8080/chiste?texto=van 2 y se cae el del medio
+    @GetMapping("/chiste")
+    public String addJoke(@RequestParam String text){
+        // INSERT INTO joke (text) VALUES('XXXXXX')
+        return "";
+    }
+
 }
