@@ -100,11 +100,6 @@ public class Ejercicio {
         return web;
     }
 
-    //http://localhost:8080/chiste?texto=van 2 y se cae el del medio
-    @GetMapping("/chiste")
-    public String addJoke(@RequestParam String text){
-        // INSERT INTO joke (text) VALUES('XXXXXX')
-        return "";
-    }
+    //Listar chistes e insertar un nuevo chiste
 
 }
