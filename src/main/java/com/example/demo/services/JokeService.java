@@ -11,15 +11,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class JokeService {
     @Autowired
+    static
     JokeRepository jokeRepository;
 
-    public Joke saveJoke(Joke joke){
+    public static Joke saveJoke(Joke joke){
         // INSERT INTO joke (text) VALUES('XXXXXX')
         Joke newJoke = jokeRepository.save(joke);
         return newJoke;
     }
 
-    public ArrayList<Joke> getAllJokes(){
+    public static ArrayList<Joke> getAllJokes(){
         // SELECT * FROM joke
         ArrayList<Joke> jokes = (ArrayList<Joke>) jokeRepository.findAll();
         return jokes;
